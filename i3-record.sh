@@ -1,5 +1,17 @@
 #!/bin/sh
 
+# edit this to your liking
+encoderoptions='
+-c:v h264_nvenc 
+-pix_fmt yuv420p
+-preset slow
+-profile:v high
+-rc vbr
+-multipass fullres
+-cq 18
+-c:a libfdk_acc
+-b:a 128k'
+
 pgrep ffmpeg >/dev/null && {
         pkill -INT ffmpeg
         exit
@@ -33,14 +45,6 @@ i3-msg -t get_tree |
                 -f pulse \
                 -i default \
                 -vf "setpts=PTS-STARTPTS,fps=60" \
-                -c:v h264_nvenc \
-                -pix_fmt yuv420p \
-                -preset slow \
-                -profile:v high \
-                -rc vbr \
-                -multipass fullres \
-                -cq 18 \
-                -c:a libfdk_acc \
-                -b:a 128k \
+                $encoderoptions \
                 "$HOME/recordings/$(date +%F-%H-%M-%S).mp4"
 }
