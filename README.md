@@ -4,7 +4,7 @@ A script that uses FFmpeg to record the focused window in the i3 window manager.
 
 # Usage
 
-Run once to start the recording, then run again to stop it. Simply `bindsym` it to a single key. The file is saved in "$HOME/recordings/<current-date-and-time>"
+Run once to start the recording, then run again to stop it. Simply `bindsym` it to a single key. The file is saved in "$HOME/recordings/\<current-date-and-time\>"
 
 # Requirements
 
