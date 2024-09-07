@@ -4,7 +4,11 @@ A script that uses FFmpeg to record the focused window in the i3 window manager.
 
 # Usage
 
-Run once to start the recording, then run again to stop it. Simply `bindsym` it to a single key. The file is saved in "$HOME/recordings/\<current-date-and-time\>"
+Edit the encoder options (default uses `h264_nvenc`, which works only on NVIDIA cards, and `libfdk_aac`, which requires a custom FFmpeg build).
+
+Run once to start the recording, then run again to stop it. You'll probably want to `bindsym` it to a single key.
+
+The file is saved in "$HOME/recordings/\<current-date-and-time\>"
 
 # Requirements
 
